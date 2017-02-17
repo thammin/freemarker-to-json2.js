@@ -48,3 +48,4 @@ primitiveArray:
   - abc
   - def
   - xyz
+boolean: true

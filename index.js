@@ -82,6 +82,7 @@ function print (schema, option) {
 
     case 'string':
     case 'integer':
+    case 'boolean':
       if (option.breakRoot) {
         if (sub) {
           return `\${get(${option.breakRoot}, '${sub}')}`
@@ -95,6 +96,9 @@ function print (schema, option) {
           return `\${get(${root})}`
         }
       }
+
+    default:
+      return 'null'
   }
 }
 

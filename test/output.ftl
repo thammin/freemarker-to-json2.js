@@ -47,5 +47,7 @@
   }</@arrayFrame>,
 
   "primitiveArray": 
-  <@arrayFrame primitiveArray; item>${get(item)}</@arrayFrame>
+  <@arrayFrame primitiveArray; item>${get(item)}</@arrayFrame>,
+
+  "boolean": ${get(boolean)}
 }
