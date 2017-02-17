@@ -33,8 +33,8 @@ to
 
 which the `get`, `arrayFrame` is just a convenient way to transform ftl data to valid json.
 
-##### get
 ```ftl
+<#-- A simple helper to convert ftl data to valid json value -->
 <#function value input="">
   <#if input?is_number>
     <#return input?c>
@@ -51,6 +51,7 @@ which the `get`, `arrayFrame` is just a convenient way to transform ftl data to 
   </#if>
 </#function>
 
+<#-- A lodash.get alike helper -->
 <#function get object="" path="" default='""'>
     <#if object?is_hash && path != "">
         <#local childs = path?split(".")>
@@ -66,6 +67,7 @@ which the `get`, `arrayFrame` is just a convenient way to transform ftl data to 
     <#return value(object)>
 </#function>
 
+<#-- A simple helper to wrap freemarker `#list` with json array -->
 <#macro arrayFrame items=[]>
     <#compress>
     [
@@ -84,4 +86,10 @@ const transform = require('freemarker-to-json2')
 
 transform('input.yaml', 'output.ftl')
   .then(result => console.log(result)) // same as output.ftl
+```
+
+# Test
+
+```sh
+npm test
 ```
