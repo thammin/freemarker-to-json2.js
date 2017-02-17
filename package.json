@@ -1,6 +1,6 @@
 {
   "name": "freemarker-to-json2.js",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Get data easier from freemarker templates :zap:",
   "main": "index.js",
   "scripts": {
