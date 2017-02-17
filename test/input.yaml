@@ -1,0 +1,50 @@
+page: 1
+sphere: 0
+profile: 0
+profileLabelList:
+  - name: あい
+    value: 32
+    sphere: 1
+  - name: ゆみ
+    value: 194
+    sphere: 2
+  - name: えり
+    value: 101
+    sphere: 2
+  - name: ゆり
+    value: 85
+    sphere: 2
+object:
+  a:
+    b:
+      c: 100
+deepArray:
+  - first:
+      value: 1
+      deeper:
+        hey: paul
+      deeperArray:
+        - very: deep
+  - first:
+      value: 2
+      deeper:
+        hey: paul2
+      deeperArray:
+        - very: deep
+  - first:
+      value: 3
+      deeper:
+        hey: paul3
+      deeperArray:
+        - very: deep
+doubleArray:
+  - deeperArray:
+    - a: 1
+    - a: 2
+  - deeperArray:
+    - a: 11
+    - a: 22
+primitiveArray:
+  - abc
+  - def
+  - xyz

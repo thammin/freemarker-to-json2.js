@@ -1,0 +1,33 @@
+{
+  "name": "freemarker-to-json2.js",
+  "version": "0.0.0",
+  "description": "Get data easier from freemarker templates :zap:",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard --fix && node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thammin/freemarker-to-json2.js.git"
+  },
+  "keywords": [
+    "ftl",
+    "freemarker",
+    "json",
+    "javascript"
+  ],
+  "author": "Paul Young <thammin@live.co.uk> (https://github.com/thammin)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thammin/freemarker-to-json2.js/issues"
+  },
+  "homepage": "https://github.com/thammin/freemarker-to-json2.js#readme",
+  "dependencies": {
+    "js-yaml": "^3.8.1",
+    "json-to-json-schema": "0.0.4"
+  },
+  "devDependencies": {
+    "standard": "^8.6.0",
+    "tape": "^4.6.3"
+  }
+}
