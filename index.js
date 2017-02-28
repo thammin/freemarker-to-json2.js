@@ -17,7 +17,7 @@ function transform (input, output) {
 
     let inputJson = safeLoad(fs.readFileSync(input, 'utf-8'))
     let schema = convert(inputJson)
-    let result = loop(schema.properties, {})
+    let result = walk(schema.properties, {})
 
     if (output) {
       fs.writeFileSync(output, result, 'utf-8')
@@ -28,13 +28,13 @@ function transform (input, output) {
 }
 
 /**
- * loop every key of an object
+ * walk every key of an object
  * @param {Object} schema - json schema object
  * @param {String?} option.shortpath - a short relative path to certain value. Exp: `abc.def.ghi`
  * @param {String?} option.indent - estimated indent string
  * @param {String?} option.breakRoot - an extra middle root that overwrite the main root of relative path
  */
-function loop (schema, option) {
+function walk (schema, option) {
   option.indent = (option.indent || '')
 
   let start = `{\n`
@@ -66,7 +66,7 @@ function print (schema, option) {
 
   switch (schema.type) {
     case 'object':
-      return loop(schema.properties, option)
+      return walk(schema.properties, option)
 
     case 'array':
       let arrayRoot = sub ? `item.${sub}` : option.shortpath
