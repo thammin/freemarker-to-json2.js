@@ -1,6 +1,6 @@
 # freemarker-to-json2.js
 
-This module take a yaml file and convert it to a freemarker file that output the data as valid json format.
+This module take a yaml file or a json file and convert it to a freemarker file that output the data as valid json format.
 
 Example: 
 
@@ -13,6 +13,21 @@ favorite:
     value: ramen
   - type: drink
     value: milk-tea
+```
+
+or 
+```json
+{
+  "name": "paul",
+  "id": 1,
+  "favorite": [{
+    "type": "food",
+    "value": "ramen"
+  }, {
+    "type": "drink",
+    "value": "milk-tea"
+  }]
+}
 ```
 
 to

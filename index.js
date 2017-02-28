@@ -1,4 +1,5 @@
 const fs = require('fs')
+const path = require('path')
 const { safeLoad } = require('js-yaml')
 const { convert } = require('json-to-json-schema')
 
@@ -15,7 +16,18 @@ function transform (input, output) {
       reject(new Error('Please specific input file.'))
     }
 
-    let inputJson = safeLoad(fs.readFileSync(input, 'utf-8'))
+    let inputJson
+    switch (path.extname(input)) {
+      case '.json':
+        inputJson = JSON.parse(fs.readFileSync(input, 'utf-8'))
+        break
+      case '.yaml':
+        inputJson = safeLoad(fs.readFileSync(input, 'utf-8'))
+        break
+      default:
+        reject(new Error('Invalid file extension. Exp: .json | .yaml'))
+    }
+
     let schema = convert(inputJson)
     let result = walk(schema.properties, {})
 
